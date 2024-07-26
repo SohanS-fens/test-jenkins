@@ -8,12 +8,6 @@ pipeline {
 
     stages {
 
-        stage('AWS CLI Test') {
-            steps {
-                sh 'aws sts get-caller-identity'
-            }
-        }
-
         stage('Run Script') {
             steps {
                 script {
