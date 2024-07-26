@@ -11,7 +11,7 @@ pipeline {
         stage('Run Script') {
             steps {
                 // Make the script executable and run it with the required arguments
-                bat 'script.sh all plan'
+                bat 'script.sh iam_user_all_rules_violation apply'
             }
         }
     }

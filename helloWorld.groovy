@@ -1,5 +1,6 @@
 def helloWorldFunction() {
-    println 'Hello, World!'
+    bat 'Hello, World!'
 }
 
 return this
+    
