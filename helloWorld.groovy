@@ -1,3 +1,5 @@
-// HelloWorld.groovy
+def helloWorldFunction() {
+    println 'Hello, World!'
+}
 
-println 'Hello, World!'
+return this
