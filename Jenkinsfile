@@ -11,7 +11,7 @@ pipeline {
         stage('Run Script') {
             steps {
                 // Make the script executable and run it with the required arguments
-                bat 'script.sh 0 apply'
+                bat 'bash -c "bash script.sh 0 plan"'
             }
         }
     }
