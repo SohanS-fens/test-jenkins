@@ -2,18 +2,18 @@ pipeline {
     agent any
 
     stages {
-        stage('Checkout') {
-            steps {
-                checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/SohanS-fens/test-jenkins.git']])
-            }
-        }
-
         stage('Run Script') {
             steps {
-                // Make the script executable and run it with the required arguments
-                bat 'bash -c "bash script.sh 0 plan"'
+                script {
+                    // Check if the script exists
+                    if (fileExists('script.sh')) {
+                        // Execute the Bash script using Git Bash
+                        bat '"C:\\Program Files\\Git\\bin\\bash.exe" -c "bash script.sh 0 plan"'
+                    } else {
+                        error 'script.sh not found'
+                    }
+                }
             }
         }
     }
-
 }
