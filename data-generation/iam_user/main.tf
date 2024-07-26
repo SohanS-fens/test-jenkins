@@ -1,5 +1,11 @@
 # Login-profile and create iam user can be called as below as per need
 
+module "aws_create_iam_user" {
+  source = "./create_iam_user"
+  for_each = var.users
+  iam_user_name = each.key
+}
+
 # Module to add iam_role to iam user
 module "aws_iam_role" {
   source = "./iam_role"
