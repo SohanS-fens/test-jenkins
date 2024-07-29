@@ -1,5 +1,5 @@
 def helloWorldFunction() {
-    bat 'Hello, World!'
+    echo 'Hello, World!'
 }
 
 return this
